@@ -74,6 +74,9 @@
       ],
       "@AutoTooltipText/*": [
         "src/components/AutoTooltipText/*"
+      ],
+      "@editor/*": [
+        "src/editor/*"
       ]
     }
   },

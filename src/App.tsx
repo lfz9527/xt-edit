@@ -1,5 +1,6 @@
+import Editor from './editor'
 const App = () => {
-  return <div>App</div>
+  return <Editor />
 }
 
 export default App
