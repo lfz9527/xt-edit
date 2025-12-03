@@ -6,7 +6,6 @@
   "editor.fontSize": 14,
   "git.autofetch": true,
   "git.confirmSync": false,
-  "files.eol": "\n",
   // 保存自动修复
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",

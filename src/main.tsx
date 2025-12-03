@@ -18,7 +18,7 @@ const root = createRoot(document.getElementById('root')!, {
     console.warn('recoverable error', error)
   },
   // 用于生成唯一 ID 前缀
-  identifierPrefix: 'lf',
+  identifierPrefix: 'xt',
 })
 
 root.render(
