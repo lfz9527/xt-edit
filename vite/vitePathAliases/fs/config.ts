@@ -4,14 +4,13 @@ import {
   interpretFileIndentation,
   writeJSON,
   logger,
+  isEmpty,
+  type Indentation
 } from '../utils'
-
 import { IDEConfig } from '../constants'
 import type { Generator } from '../generator'
 import type { Process } from '../types'
-import type { Indentation } from '../utils'
 import { normalizePath } from 'vite'
-import { isEmpty } from '../utils'
 
 /**
  * Creates a JS or TS Configfile
