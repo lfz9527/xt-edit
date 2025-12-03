@@ -1,0 +1,79 @@
+{
+  "editor.linkedEditing": true,
+  "editor.fontVariations": false,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "JetBrains Mono,Consolas, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "files.eol": "\n",
+  // 保存自动修复
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit",
+    "source.fixAll.prettier": "explicit"
+  },
+
+  // =======================下面是配置prettier格式化的setting===================
+  // 指定哪些文件不参与搜�?
+  "search.exclude": {
+    "**/node_modules": true,
+    "dist": true,
+    "build": true,
+    "yarn.lock": true
+  },
+  // 保存自动格式�?
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // ========================eslint===================================
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "typescript.tsdk": "./node_modules/typescript/lib", // 代替 vscode �?ts 语法智能提示
+  // ========================stylelint==============================
+  // 使用 stylelint 自身的校验即�? 关闭vscode验证
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": ["css", "less", "sass", "scss"],
+  //  =================== 单词记录 =======================
+  "cSpell.words": [
+    "analyz",
+    "axois",
+    "commitlint",
+    "commitlintrc",
+    "nprogress",
+    "Sider",
+    "stylelint",
+    "stylelintrc",
+    "trivago",
+    "VITE",
+    "webpackbar"
+  ]
+}
