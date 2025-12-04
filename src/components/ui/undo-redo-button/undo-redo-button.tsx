@@ -66,7 +66,7 @@ export const UndoRedoButton = forwardRef<
         {...buttonProps}
         ref={ref}
       >
-        <Icon />
+        <Icon size={16} />
       </Button>
     )
   }

@@ -1,3 +1,5 @@
+@import url('./button-colors.less');
+
 .xt-button {
   display: flex;
   gap: 0.25rem;
@@ -14,6 +16,7 @@
   transition-timing-function: var(--xt-transition-easing-default);
   transition-duration: var(--xt-transition-duration-default);
   transition-property: background, color, opacity;
+  cursor: pointer;
   font-feature-settings:
     'salt' on,
     'cv01' on;
@@ -321,6 +324,7 @@
   &:disabled {
     color: var(--xt-button-disabled-text-color);
     background-color: var(--xt-button-disabled-bg-color);
+    cursor: auto;
 
     .xt-button-icon {
       color: var(--xt-button-disabled-icon-color);

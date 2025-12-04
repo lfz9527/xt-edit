@@ -1,0 +1,429 @@
+.xt-button {
+  /**************************************************
+      Default button background color
+  **************************************************/
+
+  /* Light mode */
+  --xt-button-default-bg-color: var(--xt-gray-light-a-100);
+  --xt-button-hover-bg-color: var(--xt-gray-light-200);
+  --xt-button-active-bg-color: var(--xt-gray-light-a-200);
+  --xt-button-active-bg-color-emphasized: var(
+    --xt-brand-color-100
+  ); //more important active state
+  --xt-button-active-bg-color-subdued: var(
+    --xt-gray-light-a-200
+  ); //less important active state
+  --xt-button-active-hover-bg-color: var(--xt-gray-light-300);
+  --xt-button-active-hover-bg-color-emphasized: var(
+    --xt-brand-color-200
+  ); //more important active state hover
+  --xt-button-active-hover-bg-color-subdued: var(
+    --xt-gray-light-a-300
+  ); //less important active state hover
+  --xt-button-disabled-bg-color: var(--xt-gray-light-a-50);
+
+  /* Dark mode */
+  .dark & {
+    --xt-button-default-bg-color: var(--xt-gray-dark-a-100);
+    --xt-button-hover-bg-color: var(--xt-gray-dark-200);
+    --xt-button-active-bg-color: var(--xt-gray-dark-a-200);
+    --xt-button-active-bg-color-emphasized: var(
+      --xt-brand-color-900
+    ); //more important active state
+    --xt-button-active-bg-color-subdued: var(
+      --xt-gray-dark-a-200
+    ); //less important active state
+    --xt-button-active-hover-bg-color: var(--xt-gray-dark-300);
+    --xt-button-active-hover-bg-color-emphasized: var(
+      --xt-brand-color-800
+    ); //more important active state hover
+    --xt-button-active-hover-bg-color-subdued: var(
+      --xt-gray-dark-a-300
+    ); //less important active state hover
+    --xt-button-disabled-bg-color: var(--xt-gray-dark-a-50);
+  }
+
+  /**************************************************
+      Default button text color
+  **************************************************/
+
+  /* Light mode */
+  --xt-button-default-text-color: var(--xt-gray-light-a-600);
+  --xt-button-hover-text-color: var(--xt-gray-light-a-900);
+  --xt-button-active-text-color: var(--xt-gray-light-a-900);
+  --xt-button-active-text-color-emphasized: var(--xt-gray-light-a-900);
+  --xt-button-active-text-color-subdued: var(--xt-gray-light-a-900);
+  --xt-button-disabled-text-color: var(--xt-gray-light-a-400);
+
+  /* Dark mode */
+  .dark & {
+    --xt-button-default-text-color: var(--xt-gray-dark-a-600);
+    --xt-button-hover-text-color: var(--xt-gray-dark-a-900);
+    --xt-button-active-text-color: var(--xt-gray-dark-a-900);
+    --xt-button-active-text-color-emphasized: var(--xt-gray-dark-a-900);
+    --xt-button-active-text-color-subdued: var(--xt-gray-dark-a-900);
+    --xt-button-disabled-text-color: var(--xt-gray-dark-a-300);
+  }
+
+  /**************************************************
+      Default button icon color
+  **************************************************/
+
+  /* Light mode */
+  --xt-button-default-icon-color: var(--xt-gray-light-a-600);
+  --xt-button-hover-icon-color: var(--xt-gray-light-a-900);
+  --xt-button-active-icon-color: var(--xt-brand-color-500);
+  --xt-button-active-icon-color-emphasized: var(--xt-brand-color-600);
+  --xt-button-active-icon-color-subdued: var(--xt-gray-light-a-900);
+  --xt-button-disabled-icon-color: var(--xt-gray-light-a-400);
+
+  /* Dark mode */
+  .dark & {
+    --xt-button-default-icon-color: var(--xt-gray-dark-a-600);
+    --xt-button-hover-icon-color: var(--xt-gray-dark-a-900);
+    --xt-button-active-icon-color: var(--xt-brand-color-400);
+    --xt-button-active-icon-color-emphasized: var(--xt-brand-color-400);
+    --xt-button-active-icon-color-subdued: var(--xt-gray-dark-a-900);
+    --xt-button-disabled-icon-color: var(--xt-gray-dark-a-400);
+  }
+
+  /**************************************************
+      Default button subicon color
+  **************************************************/
+
+  /* Light mode */
+  --xt-button-default-icon-sub-color: var(--xt-gray-light-a-400);
+  --xt-button-hover-icon-sub-color: var(--xt-gray-light-a-500);
+  --xt-button-active-icon-sub-color: var(--xt-gray-light-a-400);
+  --xt-button-active-icon-sub-color-emphasized: var(--xt-gray-light-a-500);
+  --xt-button-active-icon-sub-color-subdued: var(--xt-gray-light-a-400);
+  --xt-button-disabled-icon-sub-color: var(--xt-gray-light-a-100);
+
+  /* Dark mode */
+  .dark & {
+    --xt-button-default-icon-sub-color: var(--xt-gray-dark-a-300);
+    --xt-button-hover-icon-sub-color: var(--xt-gray-dark-a-400);
+    --xt-button-active-icon-sub-color: var(--xt-gray-dark-a-300);
+    --xt-button-active-icon-sub-color-emphasized: var(--xt-gray-dark-a-400);
+    --xt-button-active-icon-sub-color-subdued: var(--xt-gray-dark-a-300);
+    --xt-button-disabled-icon-sub-color: var(--xt-gray-dark-a-100);
+  }
+
+  /**************************************************
+      Default button dropdown / arrows color
+  **************************************************/
+
+  /* Light mode */
+  --xt-button-default-dropdown-arrows-color: var(--xt-gray-light-a-600);
+  --xt-button-hover-dropdown-arrows-color: var(--xt-gray-light-a-700);
+  --xt-button-active-dropdown-arrows-color: var(--xt-gray-light-a-600);
+  --xt-button-active-dropdown-arrows-color-emphasized: var(
+    --xt-gray-light-a-700
+  );
+  --xt-button-active-dropdown-arrows-color-subdued: var(--xt-gray-light-a-600);
+  --xt-button-disabled-dropdown-arrows-color: var(--xt-gray-light-a-400);
+
+  /* Dark mode */
+  .dark & {
+    --xt-button-default-dropdown-arrows-color: var(--xt-gray-dark-a-600);
+    --xt-button-hover-dropdown-arrows-color: var(--xt-gray-dark-a-700);
+    --xt-button-active-dropdown-arrows-color: var(--xt-gray-dark-a-600);
+    --xt-button-active-dropdown-arrows-color-emphasized: var(
+      --xt-gray-dark-a-700
+    );
+    --xt-button-active-dropdown-arrows-color-subdued: var(--xt-gray-dark-a-600);
+    --xt-button-disabled-dropdown-arrows-color: var(--xt-gray-dark-a-400);
+  }
+
+  /* ----------------------------------------------------------------
+      --------------------------- GHOST BUTTON --------------------------
+      ---------------------------------------------------------------- */
+
+  &[data-style='ghost'] {
+    /**************************************************
+        Ghost button background color
+    **************************************************/
+
+    /* Light mode */
+    --xt-button-default-bg-color: var(--transparent);
+    --xt-button-hover-bg-color: var(--xt-gray-light-200);
+    --xt-button-active-bg-color: var(--xt-gray-light-a-100);
+    --xt-button-active-bg-color-emphasized: var(
+      --xt-brand-color-100
+    ); //more important active state
+    --xt-button-active-bg-color-subdued: var(
+      --xt-gray-light-a-100
+    ); //less important active state
+    --xt-button-active-hover-bg-color: var(--xt-gray-light-200);
+    --xt-button-active-hover-bg-color-emphasized: var(
+      --xt-brand-color-200
+    ); //more important active state hover
+    --xt-button-active-hover-bg-color-subdued: var(
+      --xt-gray-light-a-200
+    ); //less important active state hover
+    --xt-button-disabled-bg-color: var(--transparent);
+
+    /* Dark mode */
+    .dark & {
+      --xt-button-default-bg-color: var(--transparent);
+      --xt-button-hover-bg-color: var(--xt-gray-dark-200);
+      --xt-button-active-bg-color: var(--xt-gray-dark-a-100);
+      --xt-button-active-bg-color-emphasized: var(
+        --xt-brand-color-900
+      ); //more important active state
+      --xt-button-active-bg-color-subdued: var(
+        --xt-gray-dark-a-100
+      ); //less important active state
+      --xt-button-active-hover-bg-color: var(--xt-gray-dark-200);
+      --xt-button-active-hover-bg-color-emphasized: var(
+        --xt-brand-color-800
+      ); //more important active state hover
+      --xt-button-active-hover-bg-color-subdued: var(
+        --xt-gray-dark-a-200
+      ); //less important active state hover
+      --xt-button-disabled-bg-color: var(--transparent);
+    }
+
+    /**************************************************
+        Ghost button text color
+    **************************************************/
+
+    /* Light mode */
+    --xt-button-default-text-color: var(--xt-gray-light-a-600);
+    --xt-button-hover-text-color: var(--xt-gray-light-a-900);
+    --xt-button-active-text-color: var(--xt-gray-light-a-900);
+    --xt-button-active-text-color-emphasized: var(--xt-gray-light-a-900);
+    --xt-button-active-text-color-subdued: var(--xt-gray-light-a-900);
+    --xt-button-disabled-text-color: var(--xt-gray-light-a-400);
+
+    /* Dark mode */
+    .dark & {
+      --xt-button-default-text-color: var(--xt-gray-dark-a-600);
+      --xt-button-hover-text-color: var(--xt-gray-dark-a-900);
+      --xt-button-active-text-color: var(--xt-gray-dark-a-900);
+      --xt-button-active-text-color-emphasized: var(--xt-gray-dark-a-900);
+      --xt-button-active-text-color-subdued: var(--xt-gray-dark-a-900);
+      --xt-button-disabled-text-color: var(--xt-gray-dark-a-300);
+    }
+
+    /**************************************************
+        Ghost button icon color
+    **************************************************/
+
+    /* Light mode */
+    --xt-button-default-icon-color: var(--xt-gray-light-a-600);
+    --xt-button-hover-icon-color: var(--xt-gray-light-a-900);
+    --xt-button-active-icon-color: var(--xt-brand-color-500);
+    --xt-button-active-icon-color-emphasized: var(--xt-brand-color-600);
+    --xt-button-active-icon-color-subdued: var(--xt-gray-light-a-900);
+    --xt-button-disabled-icon-color: var(--xt-gray-light-a-400);
+
+    /* Dark mode */
+    .dark & {
+      --xt-button-default-icon-color: var(--xt-gray-dark-a-600);
+      --xt-button-hover-icon-color: var(--xt-gray-dark-a-900);
+      --xt-button-active-icon-color: var(--xt-brand-color-400);
+      --xt-button-active-icon-color-emphasized: var(--xt-brand-color-300);
+      --xt-button-active-icon-color-subdued: var(--xt-gray-dark-a-900);
+      --xt-button-disabled-icon-color: var(--xt-gray-dark-a-400);
+    }
+
+    /**************************************************
+        Ghost button subicon color
+    **************************************************/
+
+    /* Light mode */
+    --xt-button-default-icon-sub-color: var(--xt-gray-light-a-400);
+    --xt-button-hover-icon-sub-color: var(--xt-gray-light-a-500);
+    --xt-button-active-icon-sub-color: var(--xt-gray-light-a-400);
+    --xt-button-active-icon-sub-color-emphasized: var(--xt-gray-light-a-500);
+    --xt-button-active-icon-sub-color-subdued: var(--xt-gray-light-a-400);
+    --xt-button-disabled-icon-sub-color: var(--xt-gray-light-a-100);
+
+    /* Dark mode */
+    .dark & {
+      --xt-button-default-icon-sub-color: var(--xt-gray-dark-a-300);
+      --xt-button-hover-icon-sub-color: var(--xt-gray-dark-a-400);
+      --xt-button-active-icon-sub-color: var(--xt-gray-dark-a-300);
+      --xt-button-active-icon-sub-color-emphasized: var(--xt-gray-dark-a-400);
+      --xt-button-active-icon-sub-color-subdued: var(--xt-gray-dark-a-300);
+      --xt-button-disabled-icon-sub-color: var(--xt-gray-dark-a-100);
+    }
+
+    /**************************************************
+        Ghost button dropdown / arrows color
+    **************************************************/
+
+    /* Light mode */
+    --xt-button-default-dropdown-arrows-color: var(--xt-gray-light-a-600);
+    --xt-button-hover-dropdown-arrows-color: var(--xt-gray-light-a-700);
+    --xt-button-active-dropdown-arrows-color: var(--xt-gray-light-a-600);
+    --xt-button-active-dropdown-arrows-color-emphasized: var(
+      --xt-gray-light-a-700
+    );
+    --xt-button-active-dropdown-arrows-color-subdued: var(
+      --xt-gray-light-a-600
+    );
+    --xt-button-disabled-dropdown-arrows-color: var(--xt-gray-light-a-400);
+
+    /* Dark mode */
+    .dark & {
+      --xt-button-default-dropdown-arrows-color: var(--xt-gray-dark-a-600);
+      --xt-button-hover-dropdown-arrows-color: var(--xt-gray-dark-a-700);
+      --xt-button-active-dropdown-arrows-color: var(--xt-gray-dark-a-600);
+      --xt-button-active-dropdown-arrows-color-emphasized: var(
+        --xt-gray-dark-a-700
+      );
+      --xt-button-active-dropdown-arrows-color-subdued: var(
+        --xt-gray-dark-a-600
+      );
+      --xt-button-disabled-dropdown-arrows-color: var(--xt-gray-dark-a-400);
+    }
+  }
+
+  /* ----------------------------------------------------------------
+      -------------------------- PRIMARY BUTTON -------------------------
+      ---------------------------------------------------------------- */
+
+  &[data-style='primary'] {
+    /**************************************************
+        Primary button background color
+    **************************************************/
+
+    /* Light mode */
+    --xt-button-default-bg-color: var(--xt-brand-color-500);
+    --xt-button-hover-bg-color: var(--xt-brand-color-600);
+    --xt-button-active-bg-color: var(--xt-brand-color-100);
+    --xt-button-active-bg-color-emphasized: var(
+      --xt-brand-color-100
+    ); //more important active state
+    --xt-button-active-bg-color-subdued: var(
+      --xt-brand-color-100
+    ); //less important active state
+    --xt-button-active-hover-bg-color: var(--xt-brand-color-200);
+    --xt-button-active-hover-bg-color-emphasized: var(
+      --xt-brand-color-200
+    ); //more important active state hover
+    --xt-button-active-hover-bg-color-subdued: var(
+      --xt-brand-color-200
+    ); //less important active state hover
+    --xt-button-disabled-bg-color: var(--xt-gray-light-a-100);
+
+    /* Dark mode */
+    .dark & {
+      --xt-button-default-bg-color: var(--xt-brand-color-500);
+      --xt-button-hover-bg-color: var(--xt-brand-color-600);
+      --xt-button-active-bg-color: var(--xt-brand-color-900);
+      --xt-button-active-bg-color-emphasized: var(
+        --xt-brand-color-900
+      ); //more important active state
+      --xt-button-active-bg-color-subdued: var(
+        --xt-brand-color-900
+      ); //less important active state
+      --xt-button-active-hover-bg-color: var(--xt-brand-color-800);
+      --xt-button-active-hover-bg-color-emphasized: var(
+        --xt-brand-color-800
+      ); //more important active state hover
+      --xt-button-active-hover-bg-color-subdued: var(
+        --xt-brand-color-800
+      ); //less important active state hover
+      --xt-button-disabled-bg-color: var(--xt-gray-dark-a-100);
+    }
+
+    /**************************************************
+        Primary button text color
+    **************************************************/
+
+    /* Light mode */
+    --xt-button-default-text-color: var(--white);
+    --xt-button-hover-text-color: var(--white);
+    --xt-button-active-text-color: var(--xt-gray-light-a-900);
+    --xt-button-active-text-color-emphasized: var(--xt-gray-light-a-900);
+    --xt-button-active-text-color-subdued: var(--xt-gray-light-a-900);
+    --xt-button-disabled-text-color: var(--xt-gray-light-a-400);
+
+    /* Dark mode */
+    .dark & {
+      --xt-button-default-text-color: var(--white);
+      --xt-button-hover-text-color: var(--white);
+      --xt-button-active-text-color: var(--xt-gray-dark-a-900);
+      --xt-button-active-text-color-emphasized: var(--xt-gray-dark-a-900);
+      --xt-button-active-text-color-subdued: var(--xt-gray-dark-a-900);
+      --xt-button-disabled-text-color: var(--xt-gray-dark-a-300);
+    }
+
+    /**************************************************
+        Primary button icon color
+    **************************************************/
+
+    /* Light mode */
+    --xt-button-default-icon-color: var(--white);
+    --xt-button-hover-icon-color: var(--white);
+    --xt-button-active-icon-color: var(--xt-brand-color-600);
+    --xt-button-active-icon-color-emphasized: var(--xt-brand-color-600);
+    --xt-button-active-icon-color-subdued: var(--xt-brand-color-600);
+    --xt-button-disabled-icon-color: var(--xt-gray-light-a-400);
+
+    /* Dark mode */
+    .dark & {
+      --xt-button-default-icon-color: var(--white);
+      --xt-button-hover-icon-color: var(--white);
+      --xt-button-active-icon-color: var(--xt-brand-color-400);
+      --xt-button-active-icon-color-emphasized: var(--xt-brand-color-400);
+      --xt-button-active-icon-color-subdued: var(--xt-brand-color-400);
+      --xt-button-disabled-icon-color: var(--xt-gray-dark-a-300);
+    }
+
+    /**************************************************
+        Primary button subicon color
+    **************************************************/
+
+    /* Light mode */
+    --xt-button-default-icon-sub-color: var(--xt-gray-dark-a-500);
+    --xt-button-hover-icon-sub-color: var(--xt-gray-dark-a-500);
+    --xt-button-active-icon-sub-color: var(--xt-gray-light-a-500);
+    --xt-button-active-icon-sub-color-emphasized: var(--xt-gray-light-a-500);
+    --xt-button-active-icon-sub-color-subdued: var(--xt-gray-light-a-500);
+    --xt-button-disabled-icon-sub-color: var(--xt-gray-light-a-100);
+
+    /* Dark mode */
+    .dark & {
+      --xt-button-default-icon-sub-color: var(--xt-gray-dark-a-400);
+      --xt-button-hover-icon-sub-color: var(--xt-gray-dark-a-500);
+      --xt-button-active-icon-sub-color: var(--xt-gray-dark-a-300);
+      --xt-button-active-icon-sub-color-emphasized: var(--xt-gray-dark-a-400);
+      --xt-button-active-icon-sub-color-subdued: var(--xt-gray-dark-a-300);
+      --xt-button-disabled-icon-sub-color: var(--xt-gray-dark-a-100);
+    }
+
+    /**************************************************
+        Primary button dropdown / arrows color
+    **************************************************/
+
+    /* Light mode */
+    --xt-button-default-dropdown-arrows-color: var(--white);
+    --xt-button-hover-dropdown-arrows-color: var(--white);
+    --xt-button-active-dropdown-arrows-color: var(--xt-gray-light-a-700);
+    --xt-button-active-dropdown-arrows-color-emphasized: var(
+      --xt-gray-light-a-700
+    );
+    --xt-button-active-dropdown-arrows-color-subdued: var(
+      --xt-gray-light-a-700
+    );
+    --xt-button-disabled-dropdown-arrows-color: var(--xt-gray-light-a-400);
+
+    /* Dark mode */
+    .dark & {
+      --xt-button-default-dropdown-arrows-color: var(--white);
+      --xt-button-hover-dropdown-arrows-color: var(--white);
+      --xt-button-active-dropdown-arrows-color: var(--xt-gray-dark-a-600);
+      --xt-button-active-dropdown-arrows-color-emphasized: var(
+        --xt-gray-dark-a-600
+      );
+      --xt-button-active-dropdown-arrows-color-subdued: var(
+        --xt-gray-dark-a-600
+      );
+      --xt-button-disabled-dropdown-arrows-color: var(--xt-gray-dark-a-400);
+    }
+  }
+}
