@@ -38,10 +38,7 @@ export const ToolBarContent = (props: Props) => {
       </ToolbarGroup>
       <ToolbarSeparator />
       <ToolbarGroup>
-        <HeadingDropdownMenu
-          levels={[1, 2, 3, 4]}
-          portal={false}
-        />
+        <HeadingDropdownMenu portal={false} />
       </ToolbarGroup>
 
       <Spacer />

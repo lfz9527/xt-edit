@@ -68,6 +68,14 @@
     text-align: left;
   }
 
+  .xt-button-arrow-transform {
+    transition-property: transform;
+    transform: rotate(0deg);
+  }
+  .xt-button-arrow-transform.active {
+    transform: rotate(180deg);
+  }
+
   &[data-text-trim='on'] {
     .xt-button-text {
       overflow: hidden;

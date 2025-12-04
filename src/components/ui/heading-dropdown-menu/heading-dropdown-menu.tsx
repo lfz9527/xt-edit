@@ -1,6 +1,8 @@
 import { forwardRef, useState, useCallback } from 'react'
 import { ChevronDown } from 'lucide-react'
 
+import { cn } from '@/utils'
+
 import {
   type ButtonProps,
   Button,
@@ -23,8 +25,6 @@ import {
 } from '@/components/ui-primitive/dropdown-menu'
 
 import { useEditor } from '@/hooks'
-
-import './heading-dropdown-menu.less'
 
 export interface HeadingDropdownMenuProps
   extends Omit<ButtonProps, 'type'>, UseHeadingDropdownMenuConfig {
@@ -100,10 +100,16 @@ export const HeadingDropdownMenu = forwardRef<
             {label && <span className='xt-button-text'>{label}</span>}
             <ChevronDown
               size={14}
-              className='arrow-transform'
-              style={{
-                transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-              }}
+              className={cn(
+                'xt-button-arrow-transform',
+                isOpen ? 'active' : ''
+              )}
+              // style={{
+              //   transition: 'transform 180ms ease',
+              //   transformOrigin: 'center', // 可选：控制旋转轴
+              //   willChange: 'transform',
+              //   transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+              // }}
             />
           </Button>
         </DropdownMenuTrigger>
