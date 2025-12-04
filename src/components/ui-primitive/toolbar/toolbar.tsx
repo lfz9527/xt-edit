@@ -1,6 +1,11 @@
 import { forwardRef, useRef } from 'react'
+
+import { Separator } from '@/components/ui-primitive/separator'
+
 import { cn } from '@/utils'
+
 import { useComposedRef } from '@/hooks'
+
 import './toolbar.less'
 
 type BaseProps = React.HTMLAttributes<HTMLDivElement>
@@ -44,3 +49,15 @@ export const ToolbarGroup = forwardRef<HTMLDivElement, BaseProps>(
   )
 )
 ToolbarGroup.displayName = 'ToolbarGroup'
+
+export const ToolbarSeparator = forwardRef<HTMLDivElement, BaseProps>(
+  ({ ...props }, ref) => (
+    <Separator
+      ref={ref}
+      orientation='vertical'
+      decorative
+      {...props}
+    />
+  )
+)
+ToolbarSeparator.displayName = 'ToolbarSeparator'

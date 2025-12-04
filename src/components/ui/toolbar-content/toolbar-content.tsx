@@ -1,6 +1,11 @@
 import { Spacer } from '@components/ui-primitive/spacer'
+
 import { UndoRedoButton } from '@/components/ui/undo-redo-button'
-import { ToolbarGroup } from '@/components/ui-primitive/toolbar'
+
+import {
+  ToolbarGroup,
+  ToolbarSeparator,
+} from '@/components/ui-primitive/toolbar'
 
 interface Props {
   onHighlighterClick: () => void
@@ -29,6 +34,7 @@ export const ToolBarContent = (props: Props) => {
           showShortcut
         />
       </ToolbarGroup>
+      <ToolbarSeparator />
 
       <Spacer />
     </>

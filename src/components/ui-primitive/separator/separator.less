@@ -1,0 +1,23 @@
+.xt-separator {
+  --xt-link-border-color: var(--xt-gray-light-a-200);
+
+  .dark & {
+    --xt-link-border-color: var(--xt-gray-dark-a-200);
+  }
+}
+
+.xt-separator {
+  flex-shrink: 0;
+  background-color: var(--xt-link-border-color);
+
+  &[data-orientation='horizontal'] {
+    height: 1px;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  &[data-orientation='vertical'] {
+    height: 1.5rem;
+    width: 1px;
+  }
+}

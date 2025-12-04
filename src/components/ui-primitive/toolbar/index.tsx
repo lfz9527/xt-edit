@@ -1,2 +1,2 @@
-import { Toolbar, ToolbarGroup } from './toolbar'
-export { Toolbar, ToolbarGroup }
+import { Toolbar, ToolbarGroup, ToolbarSeparator } from './toolbar'
+export { Toolbar, ToolbarGroup, ToolbarSeparator }
