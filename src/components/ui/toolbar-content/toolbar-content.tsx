@@ -35,6 +35,7 @@ export const ToolBarContent = (props: Props) => {
         />
       </ToolbarGroup>
       <ToolbarSeparator />
+      <ToolbarGroup></ToolbarGroup>
 
       <Spacer />
     </>
