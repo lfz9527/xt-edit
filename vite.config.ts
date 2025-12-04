@@ -42,19 +42,6 @@ export default defineConfig(({ mode, command }) => {
         output: {
           chunkFileNames: 'js/[name]-[hash].js',
           entryFileNames: 'js/[name]-[hash].js',
-          assetFileNames: (info: Record<string, any>) => {
-            const infoType = info.name ? info.name.split('.').pop() : ''
-            if (infoType && /^(gif|jpe?g|png|svg)$/.test(infoType)) {
-              return 'assets/[name]-[hash][extname]'
-            }
-            if (infoType === 'css') {
-              return 'css/[name]-[hash][extname]'
-            }
-            if (infoType === 'ttf') {
-              return 'font/[name]-[hash][extname]'
-            }
-            return 'assets/[name]-[hash][extname]'
-          },
         },
       },
       sourcemap: envConf.VITE_BUILD_SOURCEMAP === 'true',

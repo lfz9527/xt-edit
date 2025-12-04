@@ -4,6 +4,7 @@ import StarterKit from '@tiptap/starter-kit'
 import { Toolbar } from '@/components/ui-primitive/toolbar'
 import { ToolBarContent } from '@/components/ui/toolbar-content'
 import './index.less'
+import '@/styles/_keyframe-animations.less'
 
 const Editor = () => {
   const toolbarRef = useRef<HTMLDivElement>(null)

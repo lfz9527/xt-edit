@@ -40,6 +40,7 @@ export function HeadingShortcutBadge({
         marginLeft: 6,
         lineHeight: 1,
         color: 'var(--xt-gray-light-a-300)',
+        userSelect: 'none',
       }}
     >
       {parseShortcutKeys({ shortcutKeys })}
@@ -114,7 +115,14 @@ export const HeadingButton = forwardRef<HTMLButtonElement, HeadingButtonProps>(
         {children ?? (
           <>
             <Icon className='xt-button-icon' />
-            {text && <span className='xt-button-text'>{text}</span>}
+            {text && (
+              <span
+                className='xt-button-text'
+                style={{ userSelect: 'none' }}
+              >
+                {text}
+              </span>
+            )}
             {showShortcut && (
               <HeadingShortcutBadge
                 level={level}

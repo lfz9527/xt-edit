@@ -25,14 +25,14 @@ export const ToolBarContent = (props: Props) => {
           action='undo'
           tooltip='撤销'
           showTooltip
-          shortcutKeys='ctrl-z'
+          shortcutKeys='ctrl+z'
           showShortcut
         />
         <UndoRedoButton
           action='redo'
           tooltip='重试'
           showTooltip
-          shortcutKeys='shift-ctrl-z'
+          shortcutKeys='shift+ctrl+z'
           showShortcut
         />
       </ToolbarGroup>

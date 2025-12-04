@@ -97,19 +97,20 @@ export const HeadingDropdownMenu = forwardRef<
             ref={ref}
           >
             <Icon size={16} />
-            {label && <span className='xt-button-text'>{label}</span>}
+            {label && (
+              <span
+                className='xt-button-text'
+                style={{ userSelect: 'none' }}
+              >
+                {label}
+              </span>
+            )}
             <ChevronDown
               size={14}
               className={cn(
                 'xt-button-arrow-transform',
                 isOpen ? 'active' : ''
               )}
-              // style={{
-              //   transition: 'transform 180ms ease',
-              //   transformOrigin: 'center', // 可选：控制旋转轴
-              //   willChange: 'transform',
-              //   transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-              // }}
             />
           </Button>
         </DropdownMenuTrigger>
