@@ -1,0 +1,99 @@
+.xt-badge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  font-feature-settings:
+    'salt' on,
+    'cv01' on;
+  line-height: 1.15;
+  height: 1.25rem;
+  min-width: 1.25rem;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px;
+  border-radius: var(--xt-radius-sm, 0.375rem);
+  transition-property: background, color, opacity;
+  transition-duration: var(--xt-transition-duration-default);
+  transition-timing-function: var(--xt-transition-easing-default);
+
+  /* button size large */
+  &[data-size='large'] {
+    font-size: 0.75rem;
+    height: 1.5rem;
+    min-width: 1.5rem;
+    padding: 0.375rem;
+    border-radius: var(--xt-radius-md, 0.375rem);
+  }
+
+  /* button size small */
+  &[data-size='small'] {
+    height: 1rem;
+    min-width: 1rem;
+    padding: 0.125rem;
+    border-radius: var(--xt-radius-xs, 0.25rem);
+  }
+
+  /* trim / expand text of the button */
+  .xt-badge-text {
+    padding: 0 0.125rem;
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  &[data-text-trim='on'] {
+    .xt-badge-text {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  /* standard icon, what is used */
+  .xt-badge-icon {
+    pointer-events: none;
+    flex-shrink: 0;
+    width: 0.625rem;
+    height: 0.625rem;
+  }
+
+  &[data-size='large'] .xt-badge-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}
+
+/* --------------------------------------------
+----------- BADGE COLOR SETTINGS -------------
+-------------------------------------------- */
+
+.xt-badge {
+  background-color: var(--xt-badge-bg-color);
+  border-color: var(--xt-badge-border-color);
+  color: var(--xt-badge-text-color);
+
+  .xt-badge-icon {
+    color: var(--xt-badge-icon-color);
+  }
+
+  /* Emphasized */
+  &[data-appearance='emphasized'] {
+    background-color: var(--xt-badge-bg-color-emphasized);
+    border-color: var(--xt-badge-border-color-emphasized);
+    color: var(--xt-badge-text-color-emphasized);
+
+    .xt-badge-icon {
+      color: var(--xt-badge-icon-color-emphasized);
+    }
+  }
+
+  /* Subdued */
+  &[data-appearance='subdued'] {
+    background-color: var(--xt-badge-bg-color-subdued);
+    border-color: var(--xt-badge-border-color-subdued);
+    color: var(--xt-badge-text-color-subdued);
+
+    .xt-badge-icon {
+      color: var(--xt-badge-icon-color-subdued);
+    }
+  }
+}

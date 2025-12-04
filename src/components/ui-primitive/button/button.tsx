@@ -6,6 +6,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui-primitive/tooltip'
 import './button.less'
+import './button-group.less'
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
@@ -85,3 +86,25 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 )
 
 Button.displayName = 'Button'
+
+export const ButtonGroup = forwardRef<
+  HTMLDivElement,
+  React.ComponentProps<'div'> & {
+    orientation?: 'horizontal' | 'vertical'
+  }
+>(({ className, children, orientation = 'vertical', ...props }, ref) => {
+  return (
+    <div
+      ref={ref}
+      className={cn('xt-button-group', className)}
+      data-orientation={orientation}
+      role='group'
+      {...props}
+    >
+      {children}
+    </div>
+  )
+})
+ButtonGroup.displayName = 'ButtonGroup'
+
+export default Button

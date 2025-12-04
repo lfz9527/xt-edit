@@ -2,6 +2,8 @@ import { Spacer } from '@components/ui-primitive/spacer'
 
 import { UndoRedoButton } from '@/components/ui/undo-redo-button'
 
+import { HeadingDropdownMenu } from '@/components/ui/heading-dropdown-menu'
+
 import {
   ToolbarGroup,
   ToolbarSeparator,
@@ -35,7 +37,12 @@ export const ToolBarContent = (props: Props) => {
         />
       </ToolbarGroup>
       <ToolbarSeparator />
-      <ToolbarGroup></ToolbarGroup>
+      <ToolbarGroup>
+        <HeadingDropdownMenu
+          levels={[1, 2, 3, 4]}
+          portal={false}
+        />
+      </ToolbarGroup>
 
       <Spacer />
     </>
