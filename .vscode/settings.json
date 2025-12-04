@@ -9,7 +9,6 @@
   // 保存自动修复
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit",
     "source.fixAll.prettier": "explicit"
   },
 
@@ -55,12 +54,7 @@
     "typescriptreact"
   ],
   "typescript.tsdk": "./node_modules/typescript/lib", // 代替 vscode �?ts 语法智能提示
-  // ========================stylelint==============================
-  // 使用 stylelint 自身的校验即�? 关闭vscode验证
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
-  "stylelint.validate": ["css", "less", "sass", "scss"],
+
   //  =================== 单词记录 =======================
   "cSpell.words": [
     "analyz",
@@ -69,8 +63,7 @@
     "commitlintrc",
     "nprogress",
     "Sider",
-    "stylelint",
-    "stylelintrc",
+    "tiptap",
     "trivago",
     "VITE",
     "webpackbar"

@@ -1,0 +1,27 @@
+:root {
+  --xt-toolbar-height: 2.75rem;
+  --xt-safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --xt-toolbar-bg-color: var(--white);
+  --xt-toolbar-border-color: var(--tt-gray-light-a-100);
+}
+
+.xt-toolbar {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+
+  &-group {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+
+    &:empty {
+      display: none;
+    }
+
+    &:empty + .tiptap-separator,
+    .tiptap-separator + &:empty {
+      display: none;
+    }
+  }
+}

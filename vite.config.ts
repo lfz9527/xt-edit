@@ -19,6 +19,15 @@ export default defineConfig(({ mode, command }) => {
         },
       },
     },
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+          additionalData: `@import "@/styles/_variables.less";`,
+        },
+      },
+    },
+
     plugins: createVitePlugin(mode, isBuild),
     build: {
       outDir: `output/build-${mode}`,

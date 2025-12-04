@@ -1,20 +1,16 @@
 import { loadEnv,type  PluginOption } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
 import { envParse, parseLoadedEnv } from 'vite-plugin-env-parse'
 import { compression } from 'vite-plugin-compression2'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { visualizer } from 'rollup-plugin-visualizer'
 import type { ImportMetaEnv } from '../src/types/env'
 import { vitePathAliases } from './vitePathAliases'
-import path from 'path'
 
 const createVitePlugin = (mode: string, isBuild = false) => {
   const viteEnv = parseLoadedEnv(loadEnv(mode, process.cwd())) as ImportMetaEnv
 
   const vitePlugins: PluginOption | PluginOption[] = [
     react(),
-    tailwindcss(),
         // 自动生成 别名
     vitePathAliases({
       createGlobalAlias: true,
@@ -26,11 +22,6 @@ const createVitePlugin = (mode: string, isBuild = false) => {
       dtsPath: 'src/types/env.d.ts',
     }),
 
-    // svg 图标
-    createSvgIconsPlugin({
-      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
-      symbolId: 'icon-[name]',
-    }),
 
     // 压缩gzip格式
     isBuild &&

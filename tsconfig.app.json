@@ -42,21 +42,6 @@
       "@hooks/*": [
         "src/hooks/*"
       ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@routes/*": [
-        "src/routes/*"
-      ],
-      "@service/*": [
-        "src/service/*"
-      ],
-      "@store/*": [
-        "src/store/*"
-      ],
       "@styles/*": [
         "src/styles/*"
       ],
@@ -72,11 +57,14 @@
       "@enum/*": [
         "src/enum/*"
       ],
-      "@AutoTooltipText/*": [
-        "src/components/AutoTooltipText/*"
-      ],
       "@editor/*": [
         "src/editor/*"
+      ],
+      "@plugins/*": [
+        "src/plugins/*"
+      ],
+      "@icons/*": [
+        "src/components/icons/*"
       ]
     }
   },

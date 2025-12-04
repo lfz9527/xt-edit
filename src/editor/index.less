@@ -1,0 +1,77 @@
+body {
+  --xt-theme-text: var(--xt-gray-light-900);
+
+  .dark & {
+    --xt-theme-text: var(--xt-gray-dark-900);
+  }
+}
+
+body {
+  color: var(--xt-theme-text);
+  font-weight: 400;
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-optical-sizing: auto;
+  overscroll-behavior-y: none;
+}
+
+html,
+body {
+  overscroll-behavior-x: none;
+}
+
+html,
+body,
+#root,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--xt-bg-color);
+}
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--xt-scrollbar-color) transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--xt-scrollbar-color);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.xt-editor {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.xt-editor-wrap {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+.xt-editor-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  max-width: 648px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.xt-editor-content .tiptap.ProseMirror.xt-editor {
+  flex: 1;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
