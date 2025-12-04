@@ -2,7 +2,7 @@
   --xt-toolbar-height: 2.75rem;
   --xt-safe-area-bottom: env(safe-area-inset-bottom, 0px);
   --xt-toolbar-bg-color: var(--white);
-  --xt-toolbar-border-color: var(--tt-gray-light-a-100);
+  --xt-toolbar-border-color: var(--xt-gray-light-a-100);
 }
 
 .xt-toolbar {
@@ -22,6 +22,41 @@
     &:empty + .tiptap-separator,
     .tiptap-separator + &:empty {
       display: none;
+    }
+  }
+
+  &[data-variant='fixed'] {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    min-height: var(--xt-toolbar-height);
+    background: var(--xt-toolbar-bg-color);
+    border-bottom: 1px solid var(--xt-toolbar-border-color);
+    padding: 0 0.5rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      position: absolute;
+      top: auto;
+      height: calc(var(--xt-toolbar-height) + var(--xt-safe-area-bottom));
+      border-top: 1px solid var(--xt-toolbar-border-color);
+      border-bottom: none;
+      padding: 0 0.5rem var(--xt-safe-area-bottom);
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+
+      .tiptap-toolbar-group {
+        flex: 0 0 auto;
+      }
     }
   }
 }

@@ -10,7 +10,7 @@ interface ToolbarProps extends BaseProps {
 }
 
 export const Toolbar = forwardRef<HTMLDivElement, ToolbarProps>(
-  ({ children, className, variant, ...props }, ref) => {
+  ({ children, className, variant = 'fixed', ...props }, ref) => {
     const devRef = useRef<HTMLDivElement>(null)
     const composeRef = useComposedRef(devRef, ref)
 

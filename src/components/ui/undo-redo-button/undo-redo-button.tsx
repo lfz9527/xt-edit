@@ -30,6 +30,7 @@ export const UndoRedoButton = forwardRef<
       onExecuted,
       onClick,
       children,
+      showShortcut,
       ...buttonProps
     },
     ref
@@ -57,11 +58,12 @@ export const UndoRedoButton = forwardRef<
     return (
       <Button
         data-style='ghost'
+        disabled={!canExecute}
         data-disabled={!canExecute}
         role='button'
         tabIndex={-1}
         aria-label={label}
-        // tooltip={label}
+        tooltip={label}
         onClick={handleClick}
         {...buttonProps}
         ref={ref}

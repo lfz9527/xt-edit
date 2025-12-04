@@ -14,8 +14,20 @@ export const ToolBarContent = (props: Props) => {
     <>
       <Spacer />
       <ToolbarGroup>
-        <UndoRedoButton action='undo' />
-        <UndoRedoButton action='redo' />
+        <UndoRedoButton
+          action='undo'
+          tooltip='撤销'
+          showTooltip
+          shortcutKeys='ctrl-z'
+          showShortcut
+        />
+        <UndoRedoButton
+          action='redo'
+          tooltip='重试'
+          showTooltip
+          shortcutKeys='shift-ctrl-z'
+          showShortcut
+        />
       </ToolbarGroup>
 
       <Spacer />

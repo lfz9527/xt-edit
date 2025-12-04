@@ -1,16 +1,48 @@
-import { forwardRef, useMemo } from 'react'
+import { forwardRef, useMemo, Fragment } from 'react'
 import { cn, parseShortcutKeys } from '@utils/common'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui-primitive/tooltip'
 import './button.less'
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
   // 快捷键
   shortcutKeys?: string
+  showTooltip?: boolean
+  tooltip?: React.ReactNode
+}
+
+export const ShortcutDisplay: React.FC<{ shortcuts: string[] }> = ({
+  shortcuts,
+}) => {
+  if (shortcuts.length === 0) return null
+
+  return (
+    <div>
+      {shortcuts.map((key, index) => (
+        <Fragment key={index}>
+          {index > 0 && <kbd>+</kbd>}
+          <kbd>{key}</kbd>
+        </Fragment>
+      ))}
+    </div>
+  )
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { className, children, shortcutKeys, 'aria-label': ariaLabel, ...props },
+    {
+      className,
+      children,
+      shortcutKeys,
+      tooltip,
+      showTooltip,
+      'aria-label': ariaLabel,
+      ...props
+    },
     ref
   ) => {
     // 快捷键格式化
@@ -19,16 +51,35 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       [shortcutKeys]
     )
 
+    if (!tooltip || !showTooltip) {
+      return (
+        <button
+          className={cn('xt-button', className)}
+          ref={ref}
+          aria-label={ariaLabel}
+          {...props}
+        >
+          {children}
+          {shortcuts}
+        </button>
+      )
+    }
+
     return (
-      <button
-        className={cn('xt-button', className)}
-        ref={ref}
-        aria-label={ariaLabel}
-        {...props}
-      >
-        {children}
-        {shortcuts}
-      </button>
+      <Tooltip delay={200}>
+        <TooltipTrigger
+          className={cn('xt-button', className)}
+          ref={ref}
+          aria-label={ariaLabel}
+          {...props}
+        >
+          {children}
+        </TooltipTrigger>
+        <TooltipContent>
+          {tooltip}
+          <ShortcutDisplay shortcuts={shortcuts} />
+        </TooltipContent>
+      </Tooltip>
     )
   }
 )

@@ -74,7 +74,6 @@ export function executeUndoRedoAction(
 ): boolean {
   if (!editor || !editor.isEditable) return false
   if (!canExecuteUndoRedoAction(editor, action)) return false
-
   const chain = editor.chain().focus()
   return action === 'undo' ? chain.undo().run() : chain.redo().run()
 }
@@ -124,7 +123,6 @@ export const useUndoRedo = (config: UseUndoRedoConfig) => {
 
   const handleAction = useCallback(() => {
     if (!editor) return false
-
     const success = executeUndoRedoAction(editor, action)
     if (success) {
       onExecuted?.()

@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { EditorContent, EditorContext, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import { Toolbar } from '@/components/ui-primitive/toolbar'
-import { ToolBarContent } from './toolbar-content'
+import { ToolBarContent } from '@/components/ui/toolbar-content'
 import './index.less'
 
 const Editor = () => {
