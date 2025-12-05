@@ -74,7 +74,7 @@ export const parseShortcutKeys = (props: {
 
 /**
  * 判断当前选区是否包含类型名称与所提供的任一节点类型名称匹配的节点。
- * @param editor Tiptap 编辑器实例
+ * @param editor 编辑器实例
  * @param nodeTypeNames 要进行匹配的节点类型名称列表
  * @param checkAncestorNodes 是否沿 DOM 树向上检查祖先节点的类型
  */
@@ -88,13 +88,13 @@ export function isNodeTypeSelected(
   const { selection } = editor.state
   if (selection.empty) return false
 
-  // Direct node selection check
+  // 直接节点选择检查
   if (selection instanceof NodeSelection) {
     const selectedNode = selection.node
     return selectedNode ? nodeTypeNames.includes(selectedNode.type.name) : false
   }
 
-  // Depth-based ancestor node check
+  // 基于深度的祖先节点检查
   if (checkAncestorNodes) {
     const { $from } = selection
     for (let depth = $from.depth; depth > 0; depth--) {

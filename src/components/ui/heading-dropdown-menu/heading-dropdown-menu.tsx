@@ -58,6 +58,7 @@ export const HeadingDropdownMenu = forwardRef<
     const { editor } = useEditor(providedEditor)
     const { isVisible, isActive, canToggle, Icon, label } =
       useHeadingDropdownMenu({
+        editor,
         levels,
         hideWhenUnavailable,
       })
