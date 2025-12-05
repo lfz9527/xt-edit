@@ -1,5 +1,5 @@
 import { forwardRef, useMemo, Fragment } from 'react'
-import { cn, parseShortcutKeys } from '@utils/common'
+import { cn, parseShortcutKeys } from '@/utils'
 import {
   Tooltip,
   TooltipContent,

@@ -97,7 +97,7 @@ export class Generator {
         '/'
       ).filter(Boolean)
       const lastDir = folders.slice(-1)[0]
-      let key = `${this.options.prefix}${lastDir}`
+      let key = `${this.options.prefix}/${lastDir}`
 
       // 路径去重
       const uniqueFolders = [...new Set(folders)] as string[]

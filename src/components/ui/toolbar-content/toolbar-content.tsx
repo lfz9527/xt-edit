@@ -1,4 +1,4 @@
-import { Spacer } from '@components/ui-primitive/spacer'
+import { Spacer } from '@/components/ui-primitive/spacer'
 
 import { UndoRedoButton } from '@/components/ui/undo-redo-button'
 

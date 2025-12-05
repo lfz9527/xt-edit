@@ -57,6 +57,9 @@ export async function writeConfig(
         })
       )
     }
+
+    console.log('paths',gen.paths)
+
     json.compilerOptions.paths = ovrConfig
       ? gen.paths
       : { ...paths, ...gen.paths }

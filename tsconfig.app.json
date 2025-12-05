@@ -65,6 +65,36 @@
       ],
       "@icons/*": [
         "src/components/icons/*"
+      ],
+      "@/assets/*": [
+        "src/assets/*"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/context/*": [
+        "src/context/*"
+      ],
+      "@/editor/*": [
+        "src/editor/*"
+      ],
+      "@/enum/*": [
+        "src/enum/*"
+      ],
+      "@/hooks/*": [
+        "src/hooks/*"
+      ],
+      "@/plugins/*": [
+        "src/plugins/*"
+      ],
+      "@/styles/*": [
+        "src/styles/*"
+      ],
+      "@/types/*": [
+        "src/types/*"
+      ],
+      "@/utils/*": [
+        "src/utils/*"
       ]
     }
   },

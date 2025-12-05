@@ -3,7 +3,7 @@ import { forwardRef, useCallback } from 'react'
 import {
   type ButtonProps,
   Button,
-} from '@components/ui-primitive/button/button'
+} from '@/components/ui-primitive/button/button'
 import { type UseUndoRedoConfig, useUndoRedo } from './useUndoRedo'
 
 export interface UndoRedoButtonProps

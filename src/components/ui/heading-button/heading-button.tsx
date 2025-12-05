@@ -9,7 +9,7 @@ import {
 
 import { Button, type ButtonProps } from '@/components/ui-primitive/button'
 
-import { parseShortcutKeys } from '@utils/common'
+import { parseShortcutKeys } from '@/utils/common'
 
 import { useEditor } from '@/hooks'
 
