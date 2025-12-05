@@ -1,22 +1,22 @@
 import { forwardRef, useCallback } from 'react'
 
-import {
-  type UseHeadingConfig,
-  type Level,
-  useHeading,
-  HEADING_SHORTCUT_KEYS,
-} from './useHeading'
-
-import { Button, type ButtonProps } from '@/components/ui-primitive/button'
-
-import { parseShortcutKeys } from '@/utils/common'
+import { parseShortcutKeys } from '@/utils'
 
 import { useEditor } from '@/hooks'
 
-export interface HeadingButtonProps
-  extends Omit<ButtonProps, 'type'>, UseHeadingConfig {
+import { Button, type ButtonProps } from '@/components/ui-primitive/button'
+
+import {
+  LIST_SHORTCUT_KEYS,
+  useList,
+  type ListType,
+  type UseListConfig,
+} from './index'
+
+export interface ListButtonProps
+  extends Omit<ButtonProps, 'type'>, UseListConfig {
   /**
-   * 文字
+   * Optional text to display alongside the icon.
    */
   text?: string
   /**
@@ -26,11 +26,11 @@ export interface HeadingButtonProps
   showShortcut?: boolean
 }
 
-export function HeadingShortcutBadge({
-  level,
-  shortcutKeys = HEADING_SHORTCUT_KEYS[level],
+export function ListShortcutBadge({
+  type,
+  shortcutKeys = LIST_SHORTCUT_KEYS[type],
 }: {
-  level: Level
+  type: ListType
   shortcutKeys?: string
 }) {
   return (
@@ -40,18 +40,15 @@ export function HeadingShortcutBadge({
   )
 }
 
-/**
- * 用于在编辑器中切换标题的按钮组件。
- */
-export const HeadingButton = forwardRef<HTMLButtonElement, HeadingButtonProps>(
+export const ListButton = forwardRef<HTMLButtonElement, ListButtonProps>(
   (
     {
       editor: providedEditor,
-      level,
+      type,
       text,
       hideWhenUnavailable = false,
       onToggled,
-      showShortcut = false,
+      showShortcut = true,
       onClick,
       children,
       ...buttonProps
@@ -59,18 +56,17 @@ export const HeadingButton = forwardRef<HTMLButtonElement, HeadingButtonProps>(
     ref
   ) => {
     const { editor } = useEditor(providedEditor)
-
     const {
       isVisible,
       canToggle,
       isActive,
       handleToggle,
       label,
-      Icon,
       shortcutKeys,
-    } = useHeading({
+      Icon,
+    } = useList({
       editor,
-      level,
+      type,
       hideWhenUnavailable,
       onToggled,
     })
@@ -106,18 +102,11 @@ export const HeadingButton = forwardRef<HTMLButtonElement, HeadingButtonProps>(
       >
         {children ?? (
           <>
-            <Icon className='xt-button-icon' />
-            {text && (
-              <span
-                className='xt-button-text'
-                style={{ userSelect: 'none' }}
-              >
-                {text}
-              </span>
-            )}
+            <Icon size={16} />
+            {text && <span className='xt-button-text'>{text}</span>}
             {showShortcut && (
-              <HeadingShortcutBadge
-                level={level}
+              <ListShortcutBadge
+                type={type}
                 shortcutKeys={shortcutKeys}
               />
             )}
@@ -128,4 +117,4 @@ export const HeadingButton = forwardRef<HTMLButtonElement, HeadingButtonProps>(
   }
 )
 
-HeadingButton.displayName = 'HeadingButton'
+ListButton.displayName = 'ListButton'

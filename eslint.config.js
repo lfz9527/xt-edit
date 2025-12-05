@@ -75,11 +75,8 @@ export default defineConfig([
       'react/react-in-jsx-scope': 'off',
       // 禁止在同一个文件中重复导入相同的模块。
       'no-duplicate-imports': 'error',
-      // 确保只导出 React 组件，否则会导致 热更新失败
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
+      // 允许不只导出组件
+      'react-refresh/only-export-components': 'off',
     },
   },
   // Prettier 支持

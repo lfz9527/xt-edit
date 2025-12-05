@@ -46,7 +46,6 @@ export const formatShortcutKey = (
     const lowerKey = key.toLowerCase()
     return MAC_SYMBOLS[lowerKey] || (capitalize ? key.toUpperCase() : key)
   }
-
   return capitalize ? key.charAt(0).toUpperCase() + key.slice(1) : key
 }
 

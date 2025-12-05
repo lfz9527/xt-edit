@@ -3,6 +3,9 @@ import { EditorContent, EditorContext, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import { Toolbar } from '@/components/ui-primitive/toolbar'
 import { ToolBarContent } from '@/components/ui/toolbar-content'
+
+import { TaskItem, TaskList } from '@/extension/List'
+
 import './index.less'
 import '@/styles/_keyframe-animations.less'
 
@@ -32,6 +35,8 @@ const Editor = () => {
           enableClickSelection: true,
         },
       }),
+      TaskItem,
+      TaskList,
     ],
     // 初始化内容
     content: '', // initial content

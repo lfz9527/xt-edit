@@ -1,13 +1,12 @@
 import { Spacer } from '@/components/ui-primitive/spacer'
-
-import { UndoRedoButton } from '@/components/ui/undo-redo-button'
-
-import { HeadingDropdownMenu } from '@/components/ui/heading-dropdown-menu'
-
 import {
   ToolbarGroup,
   ToolbarSeparator,
 } from '@/components/ui-primitive/toolbar'
+
+import { UndoRedoButton } from '@/components/ui/undo-redo-button'
+import { HeadingDropdownMenu } from '@/components/ui/heading-dropdown-menu'
+import { ListDropdownMenu } from '@/components/ui/list-dropdown-menu'
 
 interface Props {
   onHighlighterClick: () => void
@@ -38,7 +37,16 @@ export const ToolBarContent = (props: Props) => {
       </ToolbarGroup>
       <ToolbarSeparator />
       <ToolbarGroup>
-        <HeadingDropdownMenu portal={false} />
+        <HeadingDropdownMenu
+          portal={false}
+          tooltip='标题与正文'
+          showTooltip
+        />
+        <ListDropdownMenu
+          tooltip='列表'
+          showTooltip
+          portal={false}
+        />
       </ToolbarGroup>
 
       <Spacer />
