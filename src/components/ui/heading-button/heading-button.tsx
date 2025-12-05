@@ -11,7 +11,7 @@ import { Button, type ButtonProps } from '@/components/ui-primitive/button'
 
 import { parseShortcutKeys } from '@/utils/common'
 
-import { useEditor } from '@/hooks'
+import { useTiptapEditor } from '@/hooks'
 
 export interface HeadingButtonProps
   extends Omit<ButtonProps, 'type'>, UseHeadingConfig {
@@ -58,7 +58,7 @@ export const HeadingButton = forwardRef<HTMLButtonElement, HeadingButtonProps>(
     },
     ref
   ) => {
-    const { editor } = useEditor(providedEditor)
+    const { editor } = useTiptapEditor(providedEditor)
 
     const {
       isVisible,

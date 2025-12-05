@@ -1,4 +1,4 @@
-import { useEditor } from '@/hooks'
+import { useTiptapEditor } from '@/hooks'
 import type { Editor } from '@tiptap/react'
 import { useState, useEffect } from 'react'
 
@@ -45,7 +45,7 @@ export const useHeadingDropdownMenu = (
     levels = [1, 2, 3, 4, 5, 6],
     hideWhenUnavailable = false,
   } = config || {}
-  const { editor } = useEditor(providedEditor)
+  const { editor } = useTiptapEditor(providedEditor)
   const [isVisible, setIsVisible] = useState(true)
   const activeLevel = getActiveHeadingLevel(editor, levels)
   const isActive = isHeadingActive(editor)

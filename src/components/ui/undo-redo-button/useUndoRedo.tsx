@@ -2,7 +2,7 @@ import { type Editor } from '@tiptap/react'
 import { useCallback, useEffect, useState } from 'react'
 import { Redo2, Undo2 } from 'lucide-react'
 
-import { useEditor } from '@/hooks'
+import { useTiptapEditor } from '@/hooks'
 
 import { isNodeTypeSelected } from '@/utils'
 
@@ -105,7 +105,7 @@ export const useUndoRedo = (config: UseUndoRedoConfig) => {
     onExecuted,
   } = config
 
-  const { editor } = useEditor(providedEditor)
+  const { editor } = useTiptapEditor(providedEditor)
   const [isVisible, setIsVisible] = useState<boolean>(true)
   const canExecute = canExecuteUndoRedoAction(editor, action)
 

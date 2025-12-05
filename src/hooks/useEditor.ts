@@ -1,4 +1,8 @@
-import { type Editor, useCurrentEditor, useEditorState } from '@tiptap/react'
+import {
+  type Editor,
+  useCurrentEditor,
+  useTiptapEditorState,
+} from '@tiptap/react'
 import { useMemo } from 'react'
 
 /**
@@ -21,7 +25,7 @@ export default function useTiptapEditor(providedEditor?: Editor | null): {
     [providedEditor, coreEditor]
   )
 
-  const editorState = useEditorState({
+  const editorState = useTiptapEditorState({
     editor: mainEditor,
     selector(context) {
       if (!context.editor) {

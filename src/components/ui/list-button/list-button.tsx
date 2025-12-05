@@ -2,7 +2,7 @@ import { forwardRef, useCallback } from 'react'
 
 import { parseShortcutKeys } from '@/utils'
 
-import { useEditor } from '@/hooks'
+import { useTiptapEditor } from '@/hooks'
 
 import { Button, type ButtonProps } from '@/components/ui-primitive/button'
 
@@ -55,7 +55,7 @@ export const ListButton = forwardRef<HTMLButtonElement, ListButtonProps>(
     },
     ref
   ) => {
-    const { editor } = useEditor(providedEditor)
+    const { editor } = useTiptapEditor(providedEditor)
     const {
       isVisible,
       canToggle,

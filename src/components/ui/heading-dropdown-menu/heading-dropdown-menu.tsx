@@ -24,7 +24,7 @@ import {
   DropdownMenuItem,
 } from '@/components/ui-primitive/dropdown-menu'
 
-import { useEditor } from '@/hooks'
+import { useTiptapEditor } from '@/hooks'
 
 export interface HeadingDropdownMenuProps
   extends Omit<ButtonProps, 'type'>, UseHeadingDropdownMenuConfig {
@@ -55,7 +55,7 @@ export const HeadingDropdownMenu = forwardRef<
     ref
   ) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
-    const { editor } = useEditor(providedEditor)
+    const { editor } = useTiptapEditor(providedEditor)
     const { isVisible, isActive, canToggle, Icon, label } =
       useHeadingDropdownMenu({
         editor,

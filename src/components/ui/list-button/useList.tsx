@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react'
 import { type Editor } from '@tiptap/react'
 import { NodeSelection, TextSelection } from '@tiptap/pm/state'
 
-import { useEditor } from '@/hooks/index'
+import { useTiptapEditor } from '@/hooks/index'
 
 import { ListTodo, ListOrdered, List } from 'lucide-react'
 
@@ -237,7 +237,7 @@ export const useList = (config: UseListConfig) => {
     hideWhenUnavailable = false,
     onToggled,
   } = config
-  const { editor } = useEditor(providedEditor)
+  const { editor } = useTiptapEditor(providedEditor)
   const [isVisible, setIsVisible] = useState(true)
   const canToggle = canToggleList(editor, type)
   const isActive = isListActive(editor, type)

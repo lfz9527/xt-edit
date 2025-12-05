@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { EditorContent, EditorContext, useEditor } from '@tiptap/react'
+import { EditorContent, EditorContext, useTiptapEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import { Toolbar } from '@/components/ui-primitive/toolbar'
 import { ToolBarContent } from '@/components/ui/toolbar-content'
@@ -11,7 +11,7 @@ import '@/styles/_keyframe-animations.less'
 
 const Editor = () => {
   const toolbarRef = useRef<HTMLDivElement>(null)
-  const editor = useEditor({
+  const editor = useTiptapEditor({
     editorProps: {
       attributes: {
         // 关闭自动填充

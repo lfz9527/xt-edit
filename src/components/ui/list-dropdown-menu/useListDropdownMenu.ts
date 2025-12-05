@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react'
 
 import { isNodeInSchema } from '@/utils'
 
-import { useEditor } from '@/hooks'
+import { useTiptapEditor } from '@/hooks'
 
 import {
   type ListType,
@@ -119,7 +119,7 @@ export function useListDropdownMenu(config?: UseListDropdownMenuConfig) {
     hideWhenUnavailable = false,
   } = config || {}
 
-  const { editor } = useEditor(providedEditor)
+  const { editor } = useTiptapEditor(providedEditor)
   const [isVisible, setIsVisible] = useState(true)
 
   const listInSchema = types.some((type: string) =>

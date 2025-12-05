@@ -20,7 +20,7 @@ import {
 import { Card, CardBody } from '@/components/ui-primitive/card'
 import { type ListType, ListButton } from '@/components/ui/list-button'
 
-import { useEditor } from '@/hooks'
+import { useTiptapEditor } from '@/hooks'
 
 import { useListDropdownMenu } from './useListDropdownMenu'
 
@@ -58,7 +58,7 @@ export const ListDropdownMenu = ({
   portal = false,
   ...props
 }: ListDropdownMenuProps) => {
-  const { editor } = useEditor(providedEditor)
+  const { editor } = useTiptapEditor(providedEditor)
   const [isOpen, setIsOpen] = useState(false)
 
   const { filteredLists, canToggle, isActive, isVisible, Icon, label } =

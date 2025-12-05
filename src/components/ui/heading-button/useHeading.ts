@@ -19,7 +19,7 @@ import {
   Heading5,
   Heading6,
 } from 'lucide-react'
-import { useEditor } from '@/hooks'
+import { useTiptapEditor } from '@/hooks'
 
 export type Level = 1 | 2 | 3 | 4 | 5 | 6
 
@@ -227,7 +227,7 @@ export function useHeading(config: UseHeadingConfig) {
     onToggled,
   } = config
 
-  const { editor } = useEditor(providedEditor)
+  const { editor } = useTiptapEditor(providedEditor)
   const [isVisible, setIsVisible] = useState<boolean>(true)
   const canToggleState = canToggle(editor, level)
   const isActive = isHeadingActive(editor, level)
