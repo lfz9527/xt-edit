@@ -6,6 +6,10 @@ import { ToolBarContent } from '@/components/ui/toolbar-content'
 
 import { TaskItem, TaskList } from '@/extension/List'
 
+import '@/components/editor-node/list-node/list-node.less'
+import '@/components/editor-node/paragraph-node/paragraph-node.less'
+import '@/components/editor-node/heading-node/heading-node.less'
+
 import './index.less'
 import '@/styles/_keyframe-animations.less'
 

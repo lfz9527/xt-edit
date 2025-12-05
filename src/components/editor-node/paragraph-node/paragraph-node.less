@@ -1,0 +1,272 @@
+.tiptap.ProseMirror {
+  --xt-collaboration-carets-label: var(--xt-gray-light-900);
+  --link-text-color: var(--xt-brand-color-500);
+  --thread-text: var(--xt-gray-light-900);
+  --placeholder-color: var(--xt-gray-light-a-400);
+  --thread-bg-color: var(--xt-color-yellow-inc-2);
+
+  // ai
+  --xt-ai-insertion-color: var(--xt-brand-color-600);
+
+  .dark & {
+    --xt-collaboration-carets-label: var(--xt-gray-dark-100);
+    --link-text-color: var(--xt-brand-color-400);
+    --thread-text: var(--xt-gray-dark-900);
+    --placeholder-color: var(--xt-gray-dark-a-400);
+    --thread-bg-color: var(--xt-color-yellow-dec-2);
+
+    --xt-ai-insertion-color: var(--xt-brand-color-400);
+  }
+}
+
+/* Ensure each top-level node has relative positioning
+   so absolutely positioned placeholders work correctly */
+.tiptap.ProseMirror > * {
+  position: relative;
+}
+
+/* =====================
+     CORE EDITOR STYLES
+     ===================== */
+.tiptap.ProseMirror {
+  white-space: pre-wrap;
+  outline: none;
+  caret-color: var(--xt-cursor-color);
+
+  // Paragraph spacing
+  p:not(:first-child):not(td p):not(th p) {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: normal;
+    margin-top: 20px;
+  }
+
+  // Selection styles
+  &:not(.readonly):not(.ProseMirror-hideselection) {
+    ::selection {
+      background-color: var(--xt-selection-color);
+    }
+
+    .selection::selection {
+      background: transparent;
+    }
+  }
+
+  .selection {
+    display: inline;
+    background-color: var(--xt-selection-color);
+  }
+
+  // Selected node styles
+  .ProseMirror-selectednode:not(img):not(pre):not(.react-renderer) {
+    border-radius: var(--xt-radius-md);
+    background-color: var(--xt-selection-color);
+  }
+
+  .ProseMirror-hideselection {
+    caret-color: transparent;
+  }
+
+  // Resize cursor
+  &.resize-cursor {
+    cursor: ew-resize;
+    cursor: col-resize;
+  }
+}
+
+/* =====================
+     TEXT DECORATION
+     ===================== */
+.tiptap.ProseMirror {
+  // Text decoration inheritance for spans
+  a span {
+    text-decoration: underline;
+  }
+
+  s span {
+    text-decoration: line-through;
+  }
+
+  u span {
+    text-decoration: underline;
+  }
+
+  .xt-ai-insertion {
+    color: var(--xt-ai-insertion-color);
+  }
+}
+
+/* =====================
+     COLLABORATION
+     ===================== */
+.tiptap.ProseMirror {
+  .collaboration-carets {
+    &__caret {
+      border-right: 1px solid transparent;
+      border-left: 1px solid transparent;
+      pointer-events: none;
+      margin-left: -1px;
+      margin-right: -1px;
+      position: relative;
+      word-break: normal;
+    }
+
+    &__label {
+      color: var(--xt-collaboration-carets-label);
+      border-radius: 0.25rem;
+      border-bottom-left-radius: 0;
+      font-size: 0.75rem;
+      font-weight: 600;
+      left: -1px;
+      line-height: 1;
+      padding: 0.125rem 0.375rem;
+      position: absolute;
+      top: -1.3em;
+      user-select: none;
+      white-space: nowrap;
+    }
+  }
+}
+
+/* =====================
+     EMOJI
+     ===================== */
+.tiptap.ProseMirror [data-type='emoji'] img {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  cursor: text;
+}
+
+/* =====================
+     LINKS
+     ===================== */
+.tiptap.ProseMirror {
+  a {
+    color: var(--link-text-color);
+    text-decoration: underline;
+  }
+}
+
+/* =====================
+     MENTION
+     ===================== */
+.tiptap.ProseMirror {
+  [data-type='mention'] {
+    display: inline-block;
+    color: var(--xt-brand-color-500);
+  }
+}
+
+/* =====================
+     THREADS
+     ===================== */
+.tiptap.ProseMirror {
+  // Base styles for inline threads
+  .xt-thread.xt-thread--unresolved.xt-thread--inline {
+    transition:
+      color 0.2s ease-in-out,
+      background-color 0.2s ease-in-out;
+    color: var(--thread-text);
+    border-bottom: 2px dashed var(--xt-color-yellow-base);
+    font-weight: 600;
+
+    &.xt-thread--selected,
+    &.xt-thread--hovered {
+      background-color: var(--thread-bg-color);
+      border-bottom-color: transparent;
+    }
+  }
+
+  // Block thread styles with images
+  .xt-thread.xt-thread--unresolved.xt-thread--block {
+    &:has(img) {
+      outline: 0.125rem solid var(--xt-color-yellow-base);
+      border-radius: var(--xt-radius-xs, 0.25rem);
+      overflow: hidden;
+      width: fit-content;
+
+      &.xt-thread--selected {
+        outline-width: 0.25rem;
+        outline-color: var(--xt-color-yellow-base);
+      }
+
+      &.xt-thread--hovered {
+        outline-width: 0.25rem;
+      }
+    }
+
+    // Block thread styles without images
+    &:not(:has(img)) {
+      border-radius: 0.25rem;
+      border-bottom: 0.125rem dashed var(--xt-color-yellow-base);
+      padding-bottom: 0.5rem;
+      outline: 0.25rem solid transparent;
+
+      &.xt-thread--hovered,
+      &.xt-thread--selected {
+        background-color: var(--xt-color-yellow-base);
+        outline-color: var(--xt-color-yellow-base);
+      }
+    }
+  }
+
+  // Resolved thread styles
+  .xt-thread.xt-thread--resolved.xt-thread--inline.xt-thread--selected {
+    background-color: var(--xt-color-yellow-base);
+    border-color: transparent;
+    opacity: 0.5;
+  }
+
+  // React renderer specific styles
+  .xt-thread.xt-thread--block:has(.react-renderer) {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* =====================
+     PLACEHOLDER
+     ===================== */
+.is-empty:not(.with-slash)[data-placeholder]:has(
+    > .ProseMirror-trailingBreak:only-child
+  )::before {
+  content: attr(data-placeholder);
+}
+
+.is-empty.with-slash[data-placeholder]:has(
+    > .ProseMirror-trailingBreak:only-child
+  )::before {
+  content: "Write, type '/' for commands…";
+  font-style: italic;
+}
+
+.is-empty[data-placeholder]:has(
+    > .ProseMirror-trailingBreak:only-child
+  ):before {
+  pointer-events: none;
+  height: 0;
+  position: absolute;
+  width: 100%;
+  text-align: inherit;
+  left: 0;
+  right: 0;
+}
+
+.is-empty[data-placeholder]:has(> .ProseMirror-trailingBreak):before {
+  color: var(--placeholder-color);
+}
+
+/* =====================
+     DROPCURSOR
+     ===================== */
+.prosemirror-dropcursor-block,
+.prosemirror-dropcursor-inline {
+  background: var(--xt-brand-color-400) !important;
+  border-radius: 0.25rem;
+  margin-left: -1px;
+  margin-right: -1px;
+  width: 100%;
+  height: 0.188rem;
+  cursor: grabbing;
+}
